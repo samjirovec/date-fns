@@ -43,10 +43,8 @@ export default function toDate<DateType extends Date = Date>(
     return new argument.constructor(argument.getTime())
     // return new Date(argument.getTime())
   } else if (typeof argument === 'number' || argStr === '[object Number]') {
-    // TODO: Can we get rid of as?
-    return new Date(argument) as DateType
+    return new Date(argument)
   } else {
-    // TODO: Can we get rid of as?
-    return new Date(NaN) as DateType
+    return new Date(NaN)
   }
 }
